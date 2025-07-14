@@ -11,6 +11,9 @@ import (
 //go:embed static/*
 var staticFS embed.FS
 
+//go:embed templates/*
+var templatesFS embed.FS
+
 func main() {
 	staticContent, err := fs.Sub(staticFS, "static")
 	if err != nil {
@@ -30,7 +33,7 @@ func main() {
 		ReadTimeout:  time.Minute,
 		WriteTimeout: time.Minute,
 	}
-  log.Println("[INFO] Server listening on port 8080")
+	log.Println("[INFO] Server listening on port 8080")
 	if err := server.ListenAndServe(); err != nil {
 		panic(err)
 	}

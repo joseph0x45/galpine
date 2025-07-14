@@ -5,3 +5,6 @@ build_release:
 
 tailwind:
 	tailwindcss -i ./static/input.tailwind.css -o ./static/styles.css --watch
+
+alpine:
+	curl https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js >> ./static/alpine.js
